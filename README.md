@@ -4,7 +4,7 @@ The textbook includes a student version of the Windows-based program ITSM 2000.
 The initials ITSM stand for Interactive Time Series Modeling.
 ITSMR provides a subset of the functionality found in ITSM 2000.
 
-[ITSMR on CRAN](https://cran.r-project.org/web/packages/itsmr/index.html)
+[ITSMR on CRAN](https://CRAN.R-project.org/package=itsmr)
 
 [ITSMR Reference Manual](https://georgeweigt.github.io/itsmr-refman.pdf)
 (This is different from the link on CRAN)

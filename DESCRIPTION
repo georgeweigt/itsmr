@@ -4,10 +4,10 @@ Title: Time Series Analysis Using the Innovations Algorithm
 Version: 1.9
 Date: 2018-09-06
 Author: George Weigt
-Maintainer: George Weigt <g808391@icloud.com>
+Maintainer: George Weigt <yo73137@icloud.com>
 Description: Provides functions for modeling and forecasting time series data. Forecasting is based on the innovations algorithm. A description of the innovations algorithm can be found in the textbook "Introduction to Time Series and Forecasting" by Peter J. Brockwell and Richard A. Davis. <http://www.springer.com/us/book/9781475777505>.
 License: FreeBSD
 LazyLoad: yes
 NeedsCompilation: no
-URL: http://eigenmath.org/itsmr-refman.pdf
+URL: https://georgeweigt.github.io/itsmr-refman.pdf
 Packaged: 2018-09-06 21:00:50 UTC; roscoe

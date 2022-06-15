@@ -24,7 +24,7 @@ Version: \tab 1.9\cr
 Date: \tab 2018-09-06\cr
 License: \tab FreeBSD\cr
 LazyLoad: \tab yes\cr
-URL: \tab \url{http://eigenmath.org/itsmr-refman.pdf}\cr
+URL: \tab \url{https://georgeweigt.github.io/itsmr-refman.pdf}\cr
 }
 }
 

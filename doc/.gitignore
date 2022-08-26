@@ -1,6 +1,5 @@
 *.aux
 *.log
-*.swp
 *.synctex.gz
 *.toc
 itsmr-refman.pdf

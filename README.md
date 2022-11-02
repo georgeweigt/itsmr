@@ -7,3 +7,5 @@ ITSMR provides a subset of the functionality found in ITSM 2000.
 [ITSMR Reference Manual](https://georgeweigt.github.io/itsmr-refman.pdf)
 
 [ITSMR on CRAN](https://CRAN.R-project.org/package=itsmr)
+
+![?](https://cranlogs.r-pkg.org/badges/itsmr)

@@ -3,9 +3,14 @@
 # 2. DESCRIPTION
 # 3. man/itsmr-package.Rd
 
-.PHONY: default
+.PHONY: build install clean
 
-default:
+build:
 	R CMD build itsmr
 	R CMD check --as-cran itsmr_*.tar.gz
-#	R CMD install itsmr_*.tar.gz
+
+install:
+	R CMD install itsmr_*.tar.gz
+
+clean:
+	rm -rf itsmr.Rcheck itsmr_*.tar.gz

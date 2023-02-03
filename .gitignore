@@ -1,2 +1,4 @@
 *.swp
 *.tmp
+itsmr.Rcheck
+itsmr_*.tar.gz

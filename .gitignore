@@ -1,4 +1,3 @@
-*.swp
-*.tmp
+itsmr-refman.pdf
 itsmr.Rcheck
-itsmr_*.tar.gz
+*.tar.gz

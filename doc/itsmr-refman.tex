@@ -1,6 +1,5 @@
 \documentclass[12pt]{article}
 \usepackage[margin=1in]{geometry}
-\usepackage{parskip}
 \usepackage{amsmath}
 \usepackage{bm}
 \usepackage{graphicx}
@@ -17,8 +16,6 @@ February 11, 2018
 
 \tableofcontents
 
-\newpage
-
 \section{Introduction}
 ITSM-R is an R package for analyzing and forecasting univariate
 time series data.
@@ -29,6 +26,7 @@ The textbook includes a student version of the Windows-based program ITSM 2000.
 The initials ITSM stand for Interactive Time Series Modeling.
 ITSM-R provides a subset of the functionality found in ITSM 2000.
 
+\bigskip
 The following example shows ITSM-R at work forecasting a time series.
 
 \begin{verbatim}
@@ -145,6 +143,7 @@ Residuals are defined as follows (Brockwell and Davis, p.~164).
 \]
 Thus $\hat\sigma^2$ is the average of the squared residuals.
 
+\bigskip
 The innovations algorithm (Brockwell and Davis, p.~73)
 is used to compute $\hat X_t$ and $r_{t-1}$.
 Note that the algorithm produces mean squared errors
@@ -162,6 +161,7 @@ v_{t-1}=E(X_t-\hat X_t)^2=\sigma^2E(W_t-\hat W_t)^2=\sigma^2r_{t-1}
 \]
 where $\sigma^2$ is white noise variance.
 
+\bigskip
 It should be noted that $\gamma_X$ in (3.3.3) is
 the autocovariance of the ARMA model, not of the data.
 Then by equation (3.2.3) it can be seen that $\sigma^{-2}$ in (3.3.3)
@@ -169,16 +169,11 @@ cancels with $\sigma^2$ in $\gamma_X$.
 Hence the innovations algorithm does not depend on white noise variance at all.
 After the innovations are computed, white noise variance is estimated
 using the above formula for $\hat\sigma^2$.
-
-\[
+\begin{gather*}
 \gamma_X(h)=E(X_{t+h}X_t)=\sigma^2\sum_{j=0}^\infty\psi_j\psi_{j+|h|}\tag{3.2.3}
-\]
-
-\[
+\\
 m=\max(p,q)\tag{3.3.2}
-\]
-
-\[
+\\
 \kappa(i,j)=\left\{
 \begin{aligned}
 &\sigma^{-2}\gamma_X(i-j), && 1\le i,\;j\le m\\
@@ -189,7 +184,7 @@ m=\max(p,q)\tag{3.3.2}
 &0&&\hbox{otherwise.}
 \end{aligned}
 \right.\tag{3.3.3}
-\]
+\end{gather*}
 
 Because all estimation methods use the above formula for $\hat\sigma^2$,
 variance estimates computed by ITSM-R are different from what is normally
@@ -197,6 +192,7 @@ expected.
 For example, the Yule-Walker estimation function {\tt yw} returns a white noise
 variance estimate that differs from the traditional Yule-Walker algorithm.
 
+\bigskip
 Since variance estimates are computed uniformly,
 model AICCs can always be compared directly,
 even when different methods are used to estimate model parameters.
@@ -224,8 +220,8 @@ with
 corresponds to the following R vectors.
 
 \begin{verbatim}
-     phi = c(1/2,1/3)
-     theta = c(1/4,1/5)
+phi = c(1/2,1/3)
+theta = c(1/4,1/5)
 \end{verbatim}
 
 The equivalent model
@@ -268,8 +264,6 @@ Name & Obs. & Description\\
 \end{tabular}
 \end{center}
 
-\newpage
-
 \section{Functions}
 
 \subsection{\tt aacvf}
@@ -309,8 +303,6 @@ R> aacvf(a,3)
 [1] 7.171327 6.441393 5.060274 3.614340
 \end{verbatim}
 
-\newpage
-
 \subsection{\tt acvf}
 Computes the autocovariance of time series data.
 
@@ -339,8 +331,6 @@ R> plot(0:40,gamma,type="h")
 \begin{center}
 \includegraphics[scale=0.3]{Rplot-26.pdf}
 \end{center}
-
-\newpage
 
 \subsection{\tt ar.inf}
 Returns the AR($\infty$) coefficients
@@ -385,8 +375,6 @@ The coefficients $\pi_j$ are calculated recursively using the following formula.
 \[
 \pi_j=-\phi_j-\sum_{k=1}^q\theta_k\pi_{j-k}\qquad j=1,2,\ldots
 \]
-
-\newpage
 
 \subsection{\tt arar}
 Predict future values of a time series using the ARAR algorithm.
@@ -440,8 +428,6 @@ Filter 1 -0.5247184 -0.2735903 0 0 0 0 0 0 -0.2129203 0.316453 0
 \begin{center}
 \includegraphics[scale=0.3]{Rplot-4.pdf}
 \end{center}
-
-\newpage
 
 \subsection{\tt arma}
 Returns an ARMA model using maximum likelihood
@@ -509,8 +495,6 @@ $se.theta
 [1] 0
 \end{verbatim}
 
-\newpage
-
 \subsection{\tt autofit}
 Uses maximum likelihood to determine the best ARMA model given a range of models.
 The {\tt autofit} function tries all combinations of argument sequences and returns the model
@@ -574,8 +558,6 @@ $se.theta
 [1] 0.01288894
 \end{verbatim}
 
-\newpage
-
 \subsection{\tt burg}
 Estimates AR coefficients using the Burg method.
 
@@ -625,8 +607,6 @@ $se.theta
 [1] 0
 \end{verbatim}
 
-\newpage
-
 \subsection{\tt check}
 Check for causality and invertibility of an ARMA model.
 
@@ -656,8 +636,6 @@ R> check(a)
 Causal
 Invertible
 \end{verbatim}
-
-\newpage
 
 \subsection{\tt forecast}
 Predict future values of a time series.
@@ -763,8 +741,6 @@ At the end of the data model there is an implied subtraction
 of the mean operation.
 Hence the resulting time series always has zero mean.
 
-\newpage
-
 \subsection{\tt hannan}
 Estimates ARMA coefficients using the Hannan-Rissanen algorithm.
 It is required that $q>0$.
@@ -816,8 +792,6 @@ $se.theta
 [1] 0.1465265
 \end{verbatim}
 
-\newpage
-
 \subsection{\tt hr}
 Returns the sum of harmonic components of time series data.
 
@@ -840,8 +814,6 @@ R> plotc(deaths,y)
 \begin{center}
 \includegraphics[scale=0.3]{Rplot-12.pdf}
 \end{center}
-
-\newpage
 
 \subsection{\tt ia}
 Calculates MA coefficients using the innovations algorithm.
@@ -900,8 +872,6 @@ on p.\ 152 of {\it Introduction to Time Series and Forecasting} as
 where $\hat\theta_{m0}=1$.
 Hence the standard error for $\hat\theta_1$ is $\sigma_1=n^{-1/2}$.
 
-\newpage
-
 \subsection{\tt ma.inf}
 Returns the MA($\infty$) coefficients
 $\psi_0$, $\psi_1$, $\ldots$, $\psi_n$ where $\psi_0=1$.
@@ -948,8 +918,6 @@ The coefficients $\psi_j$ are calculated recursively using the following formula
 \theta_j+\sum_{k=1}^p\phi_k\psi_{j-k}\qquad j=1,2,\ldots
 \]
 
-\newpage
-
 \subsection{\tt periodogram}
 Plots a periodogram.
 
@@ -979,8 +947,6 @@ Filter  0.01234568 0.04938272 0.1234568 0.1975309 0.2345679 0.1975309 0.1234568
 \begin{center}
 \includegraphics[scale=0.3]{Rplot-52.pdf}
 \end{center}
-
-\newpage
 
 \subsection{\tt plota}
 Plots ACF and PACF for time series data and/or ARMA model.
@@ -1027,8 +993,6 @@ R> plota(noise)
 \includegraphics[scale=0.3]{Rplot-8.pdf}
 \end{center}
 
-\newpage
-
 \subsection{\tt plotc}
 Plots one or two time series in color.
 
@@ -1060,8 +1024,6 @@ R> plotc(uspop,y)
 \includegraphics[scale=0.3]{Rplot-36.pdf}
 \end{center}
 
-\newpage
-
 \subsection{\tt plots}
 Plots the spectrum of data or an ARMA model.
 
@@ -1084,8 +1046,6 @@ R> plots(a)
 \begin{center}
 \includegraphics[scale=0.3]{Rplot-23.pdf}
 \end{center}
-
-\newpage
 
 \subsection{\tt Resid}
 Returns the residuals of a time series model.
@@ -1179,8 +1139,6 @@ At the end of the data model there
 is an implied subtraction of the mean operation.
 Hence the resulting time series always has zero mean.
 
-\newpage
-
 \subsection{\tt season}
 Returns the seasonal component of time series data.
 
@@ -1204,8 +1162,6 @@ R> plotc(deaths,s)
 \begin{center}
 \includegraphics[scale=0.3]{Rplot-1.pdf}
 \end{center}
-
-\newpage
 
 \subsection{\tt sim}
 Generate synthetic observations for an ARMA model.
@@ -1243,8 +1199,6 @@ R> plotc(x)
 \includegraphics[scale=0.3]{Rplot-24.pdf}
 \end{center}
 
-\newpage
-
 \subsection{\tt smooth.exp}
 Applies an exponential smoothing filter to data and returns the result.
 
@@ -1268,8 +1222,6 @@ R> plotc(strikes,y)
 \begin{center}
 \includegraphics[scale=0.3]{Rplot-11.pdf}
 \end{center}
-
-\newpage
 
 \subsection{\tt smooth.fft}
 Applies a low pass filter to data and returns the result.
@@ -1299,8 +1251,6 @@ R> plotc(signal,y)
 \begin{center}
 \includegraphics[scale=0.3]{Rplot-2.pdf}
 \end{center}
-
-\newpage
 
 \subsection{\tt smooth.ma}
 Applies a moving average filter to data and returns the result.
@@ -1336,8 +1286,6 @@ Hence for $q=2$ the moving average filter is
 \[
 Y_t=\frac{1}{5}(X_{t-2}+X_{t-1}+X_t+X_{t+1}+X_{t+2})
 \]
-
-\newpage
 
 \subsection{\tt smooth.rank}
 Passes the mean and the $k$ frequencies
@@ -1375,8 +1323,6 @@ R> plot(deaths,y)
 \includegraphics[scale=0.3]{Rplot-15.pdf}
 \end{center}
 
-\newpage
-
 \subsection{\tt specify}
 Returns an ARMA model with the specified parameters.
 
@@ -1411,8 +1357,6 @@ $sigma2
 [1] 1
 \end{verbatim}
 
-\newpage
-
 \subsection{\tt test}
 Test residuals for randomness.
 
@@ -1444,8 +1388,6 @@ Rank P           (P-5148)/289.5 ~ N(0,1)      5187    0.8928
 \includegraphics[scale=0.4]{Rplot-33.pdf}
 \end{center}
 
-\newpage
-
 \subsection{\tt trend}
 Returns the trend component of time series data.
 
@@ -1468,8 +1410,6 @@ R> plotc(uspop,y)
 \begin{center}
 \includegraphics[scale=0.3]{Rplot-3.pdf}
 \end{center}
-
-\newpage
 
 \subsection{\tt yw}
 Estimates AR coefficients using the Yule-Walker method.
@@ -1580,12 +1520,12 @@ where $\hat v_{jj}$ is the $j$th diagonal element of $\hat v_p\hat\Gamma_p^{-1}$
 The R code follows immediately from the above equations.
 
 \begin{verbatim}
-        gamma = acvf(x,p)
-        Gamma = toeplitz(gamma[1:p])
-        phi = solve(Gamma,gamma[2:(p+1)])
-        v = gamma[1] - drop(crossprod(gamma[2:(p+1)],phi))
-        V = v * solve(Gamma)
-        se.phi = sqrt(1/n*diag(V))
+gamma = acvf(x,p)
+Gamma = toeplitz(gamma[1:p])
+phi = solve(Gamma,gamma[2:(p+1)])
+v = gamma[1] - drop(crossprod(gamma[2:(p+1)],phi))
+V = v * solve(Gamma)
+se.phi = sqrt(1/n*diag(V))
 \end{verbatim}
 
 Recall that R indices are 1-based hence \verb$gamma[1]$ is $\hat\gamma(0)$.

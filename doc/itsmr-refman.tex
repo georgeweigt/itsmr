@@ -1,15 +1,10 @@
-\documentclass[11pt]{article}
-\usepackage{amssymb,amsmath,bm,mathrsfs,parskip,lscape,fancyvrb}
-\usepackage{graphicx,listings}
-\usepackage[usenames,dvipsnames,svgnames,table]{xcolor}
-
-% change margins
-\addtolength{\oddsidemargin}{-.875in}
-\addtolength{\evensidemargin}{-.875in}
-\addtolength{\textwidth}{1.75in}
-\addtolength{\topmargin}{-.875in}
-\addtolength{\textheight}{1.75in}
-
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{parskip}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{graphicx}
+\parindent=0pt
 \begin{document}
 
 \begin{center}
@@ -36,7 +31,7 @@ ITSM-R provides a subset of the functionality found in ITSM 2000.
 
 The following example shows ITSM-R at work forecasting a time series.
 
-\begin{Verbatim}
+\begin{verbatim}
 library(itsmr)                        # Load ITSM-R
 plotc(wine)                           # Plot the data
 M = c("log","season",12,"trend",1)    # Model the data
@@ -46,7 +41,7 @@ a = arma(e,p=1,q=1)                   # Model the residuals
 ee = Resid(wine,M,a)                  # Obtain secondary residuals
 test(ee)                              # Check for white noise
 forecast(wine,M,a)                    # Forecast future values
-\end{Verbatim}
+\end{verbatim}
 
 Note the use of {\tt Resid} with a capital {\tt R} to compute residuals.
 ITSM-R uses {\tt Resid} instead of {\tt resid} to avoid a name conflict
@@ -246,11 +241,11 @@ models are specified by differencing $d$ times with a lag of one each time.
 For example, the following R code specifies an ARIMA(1,2,3) model
 for data set {\tt quant}.
 
-\begin{Verbatim}
+\begin{verbatim}
 M = c("diff",1,"diff",1)
 e = Resid(quant,M)
 a = arma(e,1,3)
-\end{Verbatim}
+\end{verbatim}
 
 \subsection{Data Sets}
 ITSM-R includes the following data sets that are featured in

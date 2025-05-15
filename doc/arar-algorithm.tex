@@ -1,0 +1,34 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\parindent=0pt
+\pdfinfoomitdate=1
+\pdftrailerid{}
+\begin{document}
+
+The first step in the ARAR algorithm requires finding $\phi$ that minimizes
+\begin{equation*}
+\epsilon=\sum_{t=\tau+1}^n[Y_t-\phi Y_{t-\tau}]^2
+\end{equation*}
+
+where $\tau$ is a lag.
+Note that $\epsilon$ is strictly nonnegative and so is minimized for
+\begin{equation*}
+\frac{d\epsilon}{d\phi}=0
+\end{equation*}
+
+Expand $\epsilon$.
+\begin{equation*}
+\epsilon=\sum_{t=\tau+1}^nY_t^2-2\phi\sum_{t=\tau+1}^nY_tY_{t-\tau}+\phi^2\sum_{t=\tau+1}^nY_{t-\tau}^2
+\end{equation*}
+
+Solve for $\phi$ in
+\begin{equation*}
+\frac{d\epsilon}{d\phi}=-2\sum_{t=\tau+1}^nY_tY_{t-\tau}+2\phi\sum_{t=\tau+1}^nY_{t-\tau}^2=0
+\end{equation*}
+
+to obtain
+\begin{equation*}
+\phi=\frac{\sum_{t=\tau+1}^nY_tY_{t-\tau}}{\sum_{t=\tau+1}^nY_{t-\tau}^2}
+\end{equation*}
+
+\end{document}

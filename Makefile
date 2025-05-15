@@ -1,16 +1,12 @@
-# Version number in 3 places
-# 1. itsmr.R
-# 2. DESCRIPTION
-# 3. man/itsmr-package.Rd
+# Version number in 4 places
+# 1. Makefile (this file)
+# 2. itsmr.R
+# 3. DESCRIPTION
+# 4. man/itsmr-package.Rd
 
-.PHONY: build install clean
+.PHONY: default
 
-build:
+default:
 	R CMD build itsmr
-	R CMD check --as-cran itsmr_*.tar.gz
-
-install:
-	R CMD install itsmr_*.tar.gz
-
-clean:
-	rm -rf itsmr.Rcheck itsmr_*.tar.gz
+	R CMD check --as-cran itsmr_1.11.tar.gz
+	R CMD install itsmr_1.11.tar.gz

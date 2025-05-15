@@ -4,6 +4,4 @@
              "coef", "diffinv", "fft", "filter", "frequency", "is.ts",
              "pchisq", "pnorm", "qqnorm", "rnorm", "start", "time",
              "vcov", "qnorm", "toeplitz")
-
-# Export all names
-exportPattern(".")
+exportPattern("^[[:alpha:]]+")

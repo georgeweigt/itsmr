@@ -1,11 +1,11 @@
 Package: itsmr
 Type: Package
 Title: Time Series Analysis Using the Innovations Algorithm
-Version: 1.10
-Date: 2022-07-27
-Author: George Weigt
+Version: 1.11
+Date: 2025-05-15
+Authors@R: person(given = "George",family = "Weigt",role = c("aut", "cre"),email = "9634295@gmail.com")
 Maintainer: George Weigt <9634295@gmail.com>
-Description: Provides functions for modeling and forecasting time series data. Forecasting is based on the innovations algorithm. A description of the innovations algorithm can be found in the textbook "Introduction to Time Series and Forecasting" by Peter J. Brockwell and Richard A. Davis. <https://link.springer.com/book/10.1007/b97391>.
+Description: Provides functions for modeling and forecasting time series data. Forecasting is based on the innovations algorithm. A description of the innovations algorithm can be found in the textbook "Introduction to Time Series and Forecasting" by Peter J. Brockwell and Richard A. Davis.
 License: FreeBSD
 LazyLoad: yes
 NeedsCompilation: no

@@ -20,8 +20,8 @@ by Peter J. Brockwell and Richard A. Davis.
 \tabular{ll}{
 Package: \tab itsmr\cr
 Type: \tab Package\cr
-Version: \tab 1.10\cr
-Date: \tab 2022-07-27\cr
+Version: \tab 1.11\cr
+Date: \tab 2025-05-15\cr
 License: \tab FreeBSD\cr
 LazyLoad: \tab yes\cr
 URL: \tab \url{https://georgeweigt.github.io/itsmr-refman.pdf}\cr

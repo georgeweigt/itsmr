@@ -1,4 +1,4 @@
-# This is ITSM-R version 1.10
+# This is ITSM-R version 1.11
 
 selftest = function() {
 	.test.smooth.ma()

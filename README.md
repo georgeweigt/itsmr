@@ -4,10 +4,10 @@ The textbook includes a student version of the Windows-based program ITSM 2000.
 The initials ITSM stand for Interactive Time Series Modeling.
 ITSMR provides a subset of the functionality found in ITSM 2000.
 
-[ITSMR Reference Manual](https://georgeweigt.github.io/itsmr-refman.pdf)
+[itsmr-refman.pdf](https://georgeweigt.github.io/itsmr-refman.pdf)
 
-[ITSMR on CRAN](https://CRAN.R-project.org/package=itsmr)
+<!-- [ITSMR on CRAN](https://CRAN.R-project.org/package=itsmr) -->
 
-![?](https://cranlogs.r-pkg.org/badges/itsmr)
+<!-- ![?](https://cranlogs.r-pkg.org/badges/itsmr) -->
 
 [arar-algorithm.pdf](https://georgeweigt.github.io/arar-algorithm.pdf)

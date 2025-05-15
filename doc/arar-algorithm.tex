@@ -31,4 +31,14 @@ to obtain
 \phi=\frac{\sum_{t=\tau+1}^nY_tY_{t-\tau}}{\sum_{t=\tau+1}^nY_{t-\tau}^2}
 \end{equation*}
 
+In R code
+\begin{equation*}
+\sum_{t=\tau+1}^nY_tY_{t-\tau}=\text{\tt sum(y[(tau+1):n]*y[1:(n-tau)])}
+\end{equation*}
+
+and
+\begin{equation*}
+\sum_{t=\tau+1}^nY_{t-\tau}^2=\text{\tt sum(y[1:(n-tau)]\^{}2)}
+\end{equation*}
+
 \end{document}

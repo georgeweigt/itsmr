@@ -12,5 +12,4 @@ default:
 	R CMD install itsmr_1.11.tar.gz
 
 clean:
-	rm -rf itsmr_*.tar.gz itsmr.Rcheck
-	rm -rf doc/*.aux doc/*.log doc/*.synctex.gz doc/*.toc
+	rm -rf *.gz itsmr.Rcheck doc/*.aux doc/*.log doc/*.toc doc/*.gz

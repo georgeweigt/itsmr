@@ -3,9 +3,8 @@
 *.tmp
 *.aux
 *.log
-*.synctex.gz
 *.toc
-itsmr-refman.pdf
+*.gz
 itsmr.Rcheck
-*.tar.gz
+itsmr-refman.pdf
 arar-algorithm.pdf

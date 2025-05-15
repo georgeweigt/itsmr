@@ -1901,7 +1901,7 @@ arar = function(y,h=10,opt=2) {
 
 	psi = 1
 
-	# See https://github.com/georgeweigt/itsmr/blob/main/doc/arar-algorithm.tex
+	# See https://georgeweigt.github.io/arar-algorithm.pdf
 
 	f = function(tau) sum(y[(tau+1):n]*y[1:(n-tau)])/sum(y[1:(n-tau)]^2)
 	g = function(tau) sum((y[(tau+1):n]-phi[tau]*y[1:(n-tau)])^2)/sum(y[(tau+1):n]^2)

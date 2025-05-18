@@ -8,4 +8,4 @@ ITSMR provides a subset of the functionality found in ITSM.
 
 [arar-algorithm.pdf](https://georgeweigt.github.io/arar-algorithm.pdf)
 
-![?](https://cranlogs.r-pkg.org/badges/itsmr)
+<!-- ![?](https://cranlogs.r-pkg.org/badges/itsmr) -->

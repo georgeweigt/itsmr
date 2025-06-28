@@ -1,4 +1,4 @@
-.PHONY: default
+.PHONY: default clean
 
 default:
 	make itsmr-refman.pdf
@@ -13,3 +13,6 @@ itsmr-refman.pdf: itsmr-refman.tex
 
 arar-algorithm.pdf: arar-algorithm.tex
 	pdflatex arar-algorithm.tex
+
+clean:
+	rm -f *.aux *.log *.synctex.gz *.toc

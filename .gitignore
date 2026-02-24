@@ -3,6 +3,7 @@
 *.tmp
 *.aux
 *.log
+*.out
 *.toc
 *.gz
 itsmr.Rcheck

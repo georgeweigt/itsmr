@@ -15,4 +15,4 @@ arar-algorithm.pdf: arar-algorithm.tex
 	pdflatex arar-algorithm.tex
 
 clean:
-	rm -f *.aux *.log *.synctex.gz *.toc
+	rm -f *.aux *.log *.out *.synctex.gz *.toc

@@ -4,7 +4,7 @@ The textbook includes a student version of the Windows-based program ITSM
 (Interactive Time Series Modeling).
 ITSMR provides a subset of the functionality found in ITSM.
 
-[ITSMR on CRAN](https://CRAN.R-project.org/package=itsmr)
+[CRAN page](https://CRAN.R-project.org/package=itsmr)
 
 [itsmr-refman.pdf](https://georgeweigt.github.io/itsmr-refman.pdf)
 
